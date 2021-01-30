@@ -9,7 +9,7 @@ export default function App() {
 
         <View style={styles.pictureView}>
           <Image style={styles.picture}
-            source={Images.student1} />
+            source={Images.student4} />
 
           <View style={styles.pictureDetails}>
             <Text style={{ fontWeight: 'bold' }}>Student Name</Text>
@@ -65,7 +65,9 @@ const styles = StyleSheet.create({
   picture: {
     height: Metrics.images.large,
     width: Metrics.images.large,
-    borderRadius: Metrics.images.large * 0.5
+    borderRadius: Metrics.images.large * 0.5,
+    borderWidth: 1,
+    borderColor: Colors.psudark,
   },
   pictureDetails: {
     flexDirection: 'column',
