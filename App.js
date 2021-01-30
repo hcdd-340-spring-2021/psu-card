@@ -18,23 +18,34 @@ export default function App() {
         </View>
 
         <View style={styles.profileRowItem}>
-          <Text style={{ fontWeight: 'bold' }}>Year</Text>
-          <Text style={{ fontWeight: 'bold' }}>Major</Text>
-          <Text style={{ fontWeight: 'bold' }}>Minor</Text>
-        </View>
-        <View style={[styles.profileRowItem, { marginTop: 0, marginRight: 10 }]}>
-          <Text>Junior</Text>
-          <Text style={{ paddingRight: 25 }}>HCDD</Text>
-          <Text style>AI</Text>
+
+          <View style={styles.textDetails}>
+            <Text style={{ fontWeight: 'bold' }}>Year</Text>
+            <Text>Junior</Text>
+          </View>
+
+          <View style={styles.textDetails}>
+            <Text style={{ fontWeight: 'bold' }}>Major</Text>
+            <Text>HCDD</Text>
+          </View>
+
+          <View style={styles.textDetails}>
+            <Text style={{ fontWeight: 'bold' }}>Minor</Text>
+            <Text style>AI</Text>
+          </View>
         </View>
 
         <View style={styles.profileRowItem}>
-          <Text style={{ fontWeight: 'bold' }}>Campus</Text>
-          <Text style={{ fontWeight: 'bold' }}>Email</Text>
-        </View>
-        <View style={[styles.profileRowItem, { marginTop: 0 }]}>
-          <Text style={{ paddingLeft: 10 }}>University Park</Text>
-          <Text>sxn000@psu.edu</Text>
+          <View style={styles.textDetails}>
+            <Text style={{ fontWeight: 'bold' }}>Campus</Text>
+            <Text>University Park</Text>
+          </View>
+
+          <View style={styles.textDetails}>
+            <Text style={{ fontWeight: 'bold' }}>Email</Text>
+            <Text>sxn000@psu.edu</Text>
+          </View>
+
         </View>
       </View>
     </View>
@@ -74,6 +85,12 @@ const styles = StyleSheet.create({
     marginLeft: Metrics.marginHorizontal,
     marginRight: Metrics.marginHorizontal,
   },
+
+  textDetails: {
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+
   profileRowItem: {
     marginTop: Metrics.marginVertical,
     flexDirection: 'row',
