@@ -6,7 +6,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Image style={{ height: Metrics.images.large, width: Metrics.images.large }}
-        source={Images.student1} />
+        source={Images.student4} />
     </View>
   );
 }
