@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 import { Images, Colors, Metrics } from '../Themes';
 
-const ProfileView = (profile) => {
+const ProfileView = (profile = {}) => {
     return (
         <View style={styles.card}>
 
