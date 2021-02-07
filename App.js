@@ -16,7 +16,7 @@ const getRandomProfile = () => {
 export default function App() {
 
   // set the first profile as the initial state
-  const [profile, setProfile] = useState(Profiles[0])
+  const profile = Profiles[0]
 
   return (
     <View style={styles.container}>
@@ -25,7 +25,7 @@ export default function App() {
       <View style={{ marginTop: 5 }}>
         <Button title="Get a random student!" color={Colors.psu}
           // update state to a new profile
-          onPress={() => { setProfile(getRandomProfile()) }}
+          onPress={() => { }}
         />
       </View>
     </View>
