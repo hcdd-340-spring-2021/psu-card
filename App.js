@@ -18,10 +18,12 @@ export default function App() {
 
   const initialProfiles = [
     { major: 'HCDD',
-      data: [Profiles[0], Profiles[1], Profiles[2]]
+      data: [Profiles[0], Profiles[1], Profiles[2]],
+      ItemSeparatorComponent: () => (<View style={{ height: 10 , backgroundColor: Colors.psudark}} />),
     },
     { major: 'IST',
-      data: [Profiles[3], Profiles[4], Profiles[5]]
+      data: [Profiles[3], Profiles[4], Profiles[5]],
+      ItemSeparatorComponent: () => (<View style={{ height: 10 , backgroundColor: Colors.bloodOrange}} />),
     }
   ]
 
