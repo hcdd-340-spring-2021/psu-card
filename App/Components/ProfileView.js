@@ -20,16 +20,10 @@ const ProfileView = ({ readOnly }) => {
                 {!readOnly && (
                     <View style={styles.pictureDetails}>
                         <TextInput
-                            value={name}
                             style={styles.textInput}
-                            onChangeText={(text) => setName(text)}
-                            placeholder="Name"
                         />
                         <TextInput
-                            value={profileId}
                             style={styles.textInput}
-                            onChangeText={(text) => setProfileId(text)}
-                            placeholder="ID"
                         />
                     </View>
                 )}
@@ -49,10 +43,7 @@ const ProfileView = ({ readOnly }) => {
 
                     {!readOnly && (
                         <TextInput
-                            value={year}
                             style={styles.textInput}
-                            onChangeText={(text) => setYear(text)}
-                            placeholder="Year"
                         />)}
 
                     {readOnly && (
@@ -66,10 +57,7 @@ const ProfileView = ({ readOnly }) => {
 
                     {!readOnly && (
                         <TextInput
-                            value={major}
                             style={styles.textInput}
-                            onChangeText={(text) => setMajor(text)}
-                            placeholder="Major"
                         />)}
 
                     {readOnly && (
@@ -81,10 +69,7 @@ const ProfileView = ({ readOnly }) => {
                     <Text style={{ fontWeight: 'bold' }}>Minor</Text>
                     {!readOnly && (
                         <TextInput
-                            value={minor}
                             style={styles.textInput}
-                            onChangeText={(text) => setMinor(text)}
-                            placeholder="Minor"
                         />)}
 
                     {readOnly && (
@@ -98,10 +83,7 @@ const ProfileView = ({ readOnly }) => {
                     <Text style={{ fontWeight: 'bold' }}>Campus</Text>
                     {!readOnly && (
                         <TextInput
-                            value={campus}
                             style={styles.textInput}
-                            onChangeText={(text) => setCampus(text)}
-                            placeholder="Campus"
                         />)}
 
                     {readOnly && (
@@ -113,10 +95,7 @@ const ProfileView = ({ readOnly }) => {
                     <Text style={{ fontWeight: 'bold' }}>Email</Text>
                     {!readOnly && (
                         <TextInput
-                            value={email}
                             style={styles.textInput}
-                            onChangeText={(text) => setEmail(text)}
-                            placeholder="Email"
                         />)}
 
                     {readOnly && (
