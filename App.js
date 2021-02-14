@@ -1,33 +1,44 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Image, Button } from 'react-native';
+import { Dimensions, StyleSheet, Text, View, Image, Button, SectionList } from 'react-native';
 import { Colors, Images, Profiles } from './App/Themes';
 import ProfileView from './App/Components/ProfileView'
 
-const getRandomInt = (max) => {
-  //get random integer from [0, max)
-  return Math.floor(Math.random() * Math.floor(max));
+const { width, height } = Dimensions.get('window');
+
+const renderHeader = (section) => {
+  return (
+    <View style={styles.header}>
+      <Text style={styles.title}>{section.major}</Text>
+    </View>
+  )
 }
 
-const getRandomProfile = () => {
-  // get a random profile
-  return Profiles[getRandomInt(Profiles.length)]
-}
 
 export default function App() {
 
-  // set the first profile as the initial state
-  const [profile, setProfile] = useState(Profiles[0])
+  const initialProfiles = [
+    { major: 'HCDD',
+      data: [Profiles[0], Profiles[1], Profiles[2]]
+    },
+    { major: 'IST',
+      data: [Profiles[3], Profiles[4], Profiles[5]]
+    }
+  ]
+
+  // set initial State
+  const [profileList, setProfileList] = useState(initialProfiles)
 
   return (
     <View style={styles.container}>
-      {ProfileView(profile)}
+      <SectionList
+        sections={profileList}
+        renderItem={({ item }) => ProfileView(item)}
+        ItemSeparatorComponent={() => (<View style={{ height: 10 }} />)}
+        keyExtractor={(item) => item.id}
+        contentContainerStyle={{ alignItems: 'center' }}
+        renderSectionHeader={({ section }) => renderHeader(section)}
+      />
 
-      <View style={{ marginTop: 5 }}>
-        <Button title="Get a random student!" color={Colors.psu}
-          // update state to a new profile
-          onPress={() => { setProfile(getRandomProfile()) }}
-        />
-      </View>
     </View>
   );
 }
@@ -40,4 +51,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  header: {
+    height: 60,
+    width: width * 0.9,
+    backgroundColor: "#ff8080",
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 10,
+    marginBottom: 10
+  },
+  title: {
+    fontSize: 24
+  }
 });
