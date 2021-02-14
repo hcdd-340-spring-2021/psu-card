@@ -1,22 +1,14 @@
-import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, View, Image, Button } from 'react-native';
 import { Colors, Images } from './App/Themes';
 import ProfileView from './App/Components/ProfileView'
 
 export default function App() {
-  const profile = {
-    image: Images.student4,
-    year: 'Junior',
-    name: 'Function Component',
-    id: '00000000',
-    major: 'HCDD',
-    minor: 'Psychology',
-    campus: 'University Park',
-    email: 'fxc000@psu.edu'
-  }
+  const [readOnly, setReadOnly] = useState(false)
   return (
     <View style={styles.container}>
-      {ProfileView(profile)}
+      {ProfileView({readOnly})}
+      <Button title="Create Profile!" onPress={() => setReadOnly(true)}/>
     </View>
   );
 }
