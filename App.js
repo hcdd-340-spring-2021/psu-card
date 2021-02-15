@@ -17,11 +17,15 @@ const renderHeader = (section) => {
 export default function App() {
 
   const initialProfiles = [
-    { major: 'HCDD',
-      data: [Profiles[0], Profiles[1], Profiles[2]]
+    {
+      major: 'HCDD',
+      key: 'HCDD',
+      data: [Profiles[0], Profiles[1], Profiles[2]],
     },
-    { major: 'IST',
-      data: [Profiles[3], Profiles[4], Profiles[5]]
+    {
+      major: 'IST',
+      key: 'IST',
+      data: [Profiles[3], Profiles[4], Profiles[5]],
     }
   ]
 
