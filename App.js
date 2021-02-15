@@ -36,11 +36,12 @@ export default function App() {
     <View style={styles.container}>
       <SectionList
         sections={profileList}
-        renderItem={({ item }) => ProfileView(item)}
+        renderItem={({ item }) => (<View><Text>{item.name} is from {item.campus}</Text></View>)}
         ItemSeparatorComponent={() => (<View style={{ height: 10 }} />)}
         keyExtractor={(item) => item.id}
         contentContainerStyle={{ alignItems: 'center' }}
         renderSectionHeader={({ section }) => renderHeader(section)}
+        renderSectionFooter={({ section }) => (<View><Text style={{ fontWeight: 'bold' }}>End of section {section.major}</Text></View>)}
       />
 
     </View>
