@@ -18,10 +18,12 @@ export default function App() {
 
   const initialProfiles = [
     { major: 'HCDD',
+      key: 'HCDD',
       data: [Profiles[0], Profiles[1], Profiles[2]],
       ItemSeparatorComponent: () => (<View style={{ height: 10 , backgroundColor: Colors.psudark}} />),
     },
     { major: 'IST',
+      key: 'IST',
       data: [Profiles[3], Profiles[4], Profiles[5]],
       ItemSeparatorComponent: () => (<View style={{ height: 10 , backgroundColor: Colors.bloodOrange}} />),
     }
